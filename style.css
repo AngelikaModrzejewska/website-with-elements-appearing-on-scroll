@@ -1,0 +1,162 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: block;
+}
+
+html {
+  font-family: Oswald, sans-serif;
+}
+
+.wrap {
+  margin: 0 auto;
+  overflow-x: hidden;
+}
+
+/* Navigation */
+
+nav {
+  position: relative;
+  height: 15vh;
+  background-color: #ccc;
+  padding-left: 25px;
+}
+
+nav h1 {
+  font-size: 50px;
+  text-align: left;
+}
+
+nav button {
+  position: absolute;
+  top: 50%;
+  right: 40px;
+  transform: translateY(-50%);
+  padding: 10px 25px;
+  font-size: 22px;
+  font-family: Oswald, sans-serif;
+  letter-spacing: 1px;
+  border: 2px solid black;
+  background-color: transparent;
+  border-radius: 10px;
+  box-shadow: 0 0 0 5px rgb(208, 229, 230), 0 0 0 7px black;
+  text-transform: uppercase;
+  overflow: hidden;
+  color: black;
+  cursor: pointer;
+  transition: 0.25s 0.05s linear;
+}
+
+nav button::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 100%;
+  bottom: 0;
+  left: 0;
+  background-color: #000;
+  transition: 0.3s linear;
+  z-index: -1;
+}
+
+nav button:hover::after {
+  width: 100%;
+}
+
+nav button:hover {
+  color: white;
+}
+
+nav button:focus {
+  outline: 0;
+}
+
+/* Header */
+
+header {
+  position: relative;
+  height: 85vh;
+  background-image: linear-gradient(45deg,
+      rgb(208, 229, 230) 0%,
+      rgb(163, 200, 202) 40%,
+      rgb(132, 196, 199) 70%,
+      rgb(141, 204, 207) 100%);
+}
+
+header div {
+  position: absolute;
+  top: 50%;
+  left: 50px;
+  transform: translateY(-50%);
+  font-size: 80px;
+}
+
+.cursor {
+  opacity: 0;
+  transition: 0.2s;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+.cursor.active {
+  opacity: 1;
+}
+
+/* About */
+
+.about h2 {
+  background-color: #3d838c;
+  padding: 20px 0 20px 10vw;
+  font-size: 30px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: normal;
+  margin-bottom: 20px;
+  color: rgb(208, 229, 230);
+}
+
+.about img {
+  float: left;
+  padding: 0 30px;
+}
+
+.about p {
+  font-size: 22px;
+  padding-right: 40px;
+  line-height: 2;
+}
+
+.about article {
+  margin-bottom: 30px;
+  transition: 1s;
+}
+
+.about .art1,
+.about .art3 {
+  transform: translateX(-100vw);
+}
+
+.about .art2 {
+  transform: translateX(100vw);
+}
+
+.about .art1.active,
+.about .art2.active,
+.about .art3.active {
+  transform: translateX(0);
+}
+
+/* Footer */
+
+footer {
+  line-height: 80px;
+  background-color: #ccc;
+  text-align: center;
+  color: black;
+  font-size: 22px;
+}
